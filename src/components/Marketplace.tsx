@@ -21,6 +21,8 @@ import Process from './Process';
 import AdvisorProfiles from './AdvisorProfiles';
 import KPIs from './KPIs';
 import Testimonials from './Testimonials';
+import Network from './Network';
+import FAQ from './FAQ';
 
 // --- Shared Components ---
 
@@ -214,10 +216,12 @@ export default function Marketplace() {
       <Header />
       <Hero />
       <div className="space-y-24 pb-24 overflow-hidden">
+        <Network />
         <Process />
         <AdvisorProfiles />
         <Testimonials />
         <KPIs />
+        <FAQ />
         <Pricing onSelectTier={handleSelectTier} />
         <StartProject selectedTier={selectedTier} />
       </div>

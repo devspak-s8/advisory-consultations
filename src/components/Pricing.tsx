@@ -19,32 +19,32 @@ const SYMBOLS = {
 const TIERS = [
   {
     id: 'blueprint',
-    name: 'System Blueprint',
+    name: 'Foundation Stress-Test',
     price: 1500,
-    description: 'High-level architectural consulting and roadmap.',
-    features: ['Infrastructure Audit', 'Tech Stack Selection', 'Scalability Roadmap', 'Risk Assessment'],
+    description: 'Deep audit of your business model and uncomfortable questions answered.',
+    features: ['Business Breakdown', 'Proof Points Analysis', 'Stress-testing ROI', 'Narrative Gap Audit'],
   },
   {
-    id: 'mvp',
-    name: 'Core MVP',
-    price: 8500,
-    description: 'Rapid production-ready product building.',
-    popular: true,
-    features: ['Functionality Design', 'Frontend/Backend Dev', 'Database Integration', 'Cloud Deployment'],
-  },
-  {
-    id: 'enterprise',
-    name: 'Enterprise Engine',
-    price: 25000,
-    description: 'High-scale systems and complex integrations.',
-    features: ['Distributed Systems', 'Security Hardening', 'Legacy Migration', 'Performance Optimization'],
-  },
-  {
-    id: 'prototype',
-    name: 'Custom Prototype',
+    id: 'forge',
+    name: 'Narrative Forge',
     price: 4500,
-    description: 'Fixed-scope R&D tools and internal apps.',
-    features: ['PoC Development', 'UX Prototype', 'API Layering', 'Tooling Setup'],
+    description: 'Rewriting your story and restructuring your deck for maximum impact.',
+    popular: true,
+    features: ['Narrative Positioning', 'Deck Restructuring', 'Complex Idea Simplification', 'Investor-Ready Flow'],
+  },
+  {
+    id: 'investor',
+    name: 'Global Investor Ready',
+    price: 12500,
+    description: 'Full-scale preparation for Series A/B rounds and high-stakes VCs.',
+    features: ['Metrics Sharpening', 'Pricing Strategy Audit', 'Communication Coaching', 'Path to Returns Mapping'],
+  },
+  {
+    id: 'execution',
+    name: 'Rapid Execution',
+    price: 2500,
+    description: 'Tactical support to fix messy slides and investor communications.',
+    features: ['Slide Redesign', 'One-Pager Creation', 'Investor Email Templates', 'Pitch Dry Runs'],
   },
 ];
 
@@ -69,7 +69,7 @@ export default function Pricing({ onSelectTier }: PricingProps) {
       <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
         <div>
           <h2 className="text-4xl font-bold tracking-tight mb-4">Strategic Tiers</h2>
-          <p className="text-text-muted text-lg">Engineering solutions scaled to your project depth.</p>
+          <p className="text-text-muted text-lg">Fundraising solutions scaled to your project depth.</p>
         </div>
         
         <div className="flex bg-surface-card border border-border-subtle p-1 rounded-xl">
