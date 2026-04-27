@@ -56,8 +56,9 @@ export default function StartProject({ selectedTier }: StartProjectProps) {
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
+          whileHover={{ boxShadow: "0 0 40px rgba(255,255,255,0.03)" }}
           viewport={{ once: true }}
-          className="bg-surface-card border border-border-subtle p-8 md:p-12 rounded-3xl relative overflow-hidden"
+          className="bg-surface-card border border-border-subtle p-8 md:p-12 rounded-3xl relative overflow-hidden group hover:border-white/20 transition-all duration-500"
         >
           <AnimatePresence>
             {selectedTier && (

@@ -18,6 +18,9 @@ import { useState } from 'react';
 import Pricing from './Pricing';
 import StartProject from './StartProject';
 import Process from './Process';
+import AdvisorProfiles from './AdvisorProfiles';
+import KPIs from './KPIs';
+import Testimonials from './Testimonials';
 
 // --- Shared Components ---
 
@@ -35,9 +38,13 @@ const Button = ({
   };
 
   return (
-    <button className={`${base} ${variants[variant as keyof typeof variants]} ${className}`} {...props}>
+    <motion.button 
+      whileHover={{ y: -2 }}
+      className={`${base} ${variants[variant as keyof typeof variants]} ${className}`} 
+      {...props}
+    >
       {children}
-    </button>
+    </motion.button>
   );
 };
 
@@ -53,8 +60,9 @@ const Header = () => {
           <span className="text-lg font-bold tracking-widest">ADVISORY</span>
           <nav className="hidden md:flex gap-8">
             <a href="#what-we-do" className="text-text-muted hover:text-white transition-colors text-sm font-medium">What we do</a>
+            <a href="#advisors" className="text-text-muted hover:text-white transition-colors text-sm font-medium">Advisors</a>
+            <a href="#testimonials" className="text-text-muted hover:text-white transition-colors text-sm font-medium">Success</a>
             <a href="#pricing" className="text-text-muted hover:text-white transition-colors text-sm font-medium">Tiers</a>
-            <a href="#contact" className="text-text-muted hover:text-white transition-colors text-sm font-medium">Initiate</a>
           </nav>
         </div>
 
@@ -78,9 +86,12 @@ const Header = () => {
             className="md:hidden bg-surface-card border-b border-border-subtle overflow-hidden"
           >
             <div className="flex flex-col p-6 gap-4">
-              <a href="#what-we-do" onClick={() => setIsOpen(false)} className="text-text-muted hover:text-white py-2 border-b border-border-subtle/50">What we do</a>
-              <a href="#pricing" onClick={() => setIsOpen(false)} className="text-text-muted hover:text-white py-2 border-b border-border-subtle/50">Tiers</a>
-              <a href="#contact" onClick={() => setIsOpen(false)} className="text-text-muted hover:text-white py-2">Initiate</a>
+              <a href="#what-we-do" onClick={() => setIsOpen(false)} className="text-text-muted hover:text-white py-2 border-b border-border-subtle/50 font-bold">What we do</a>
+              <a href="#advisors" onClick={() => setIsOpen(false)} className="text-text-muted hover:text-white py-2 border-b border-border-subtle/50 font-bold">Advisors</a>
+              <a href="#testimonials" onClick={() => setIsOpen(false)} className="text-text-muted hover:text-white py-2 border-b border-border-subtle/50 font-bold">Success Stories</a>
+              <a href="#kpis" onClick={() => setIsOpen(false)} className="text-text-muted hover:text-white py-2 border-b border-border-subtle/50 font-bold">Performance</a>
+              <a href="#pricing" onClick={() => setIsOpen(false)} className="text-text-muted hover:text-white py-2 border-b border-border-subtle/50 font-bold">Tiers</a>
+              <a href="#contact" onClick={() => setIsOpen(false)} className="text-text-muted hover:text-white py-2 font-bold">Initiate</a>
             </div>
           </motion.div>
         )}
@@ -202,8 +213,11 @@ export default function Marketplace() {
     <div className="min-h-screen bg-background">
       <Header />
       <Hero />
-      <div className="space-y-4 px-4 overflow-hidden">
+      <div className="space-y-24 pb-24 overflow-hidden">
         <Process />
+        <AdvisorProfiles />
+        <Testimonials />
+        <KPIs />
         <Pricing onSelectTier={handleSelectTier} />
         <StartProject selectedTier={selectedTier} />
       </div>
@@ -211,5 +225,3 @@ export default function Marketplace() {
     </div>
   );
 }
-
-import { Code2 } from 'lucide-react';

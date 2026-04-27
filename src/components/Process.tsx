@@ -81,9 +81,12 @@ export default function Process() {
             className={`flex flex-col ${item.side === 'right' ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-12`}
           >
             <div className="flex-1 w-full">
-              <div className="p-8 rounded-3xl bg-surface-card border border-border-subtle group hover:border-zinc-700 transition-all duration-500 relative overflow-hidden">
+              <motion.div 
+                whileHover={{ y: -5, scale: 1.01 }}
+                className="p-8 rounded-3xl bg-surface-card border border-border-subtle group hover:border-white/30 transition-all duration-500 relative overflow-hidden"
+              >
                 <div className="flex items-start gap-6 relative z-10">
-                  <div className="p-4 bg-white/5 rounded-2xl">
+                  <div className="p-4 bg-white/5 rounded-2xl group-hover:bg-white/10 transition-colors">
                     <item.icon className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -92,7 +95,7 @@ export default function Process() {
                   </div>
                 </div>
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
+              </motion.div>
             </div>
             <div className="hidden md:block w-px h-24 bg-border-subtle relative">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white shadow-[0_0_10px_white]" />

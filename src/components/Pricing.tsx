@@ -93,12 +93,13 @@ export default function Pricing({ onSelectTier }: PricingProps) {
             key={tier.id}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.02 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1 }}
             className={`relative flex flex-col p-8 rounded-2xl border transition-all duration-300 ${
               tier.popular 
                 ? 'bg-surface-card border-white ring-1 ring-white shadow-[0_0_30px_rgba(255,255,255,0.05)]' 
-                : 'bg-surface-card border-border-subtle hover:border-zinc-700'
+                : 'bg-surface-card border-border-subtle hover:border-white/30'
             }`}
           >
             {tier.popular && (
