@@ -52,24 +52,15 @@ const Header = () => {
         <div className="flex items-center gap-12">
           <span className="text-lg font-bold tracking-widest">ADVISORY</span>
           <nav className="hidden md:flex gap-8">
-            <a href="#process" className="text-text-muted hover:text-white transition-colors text-sm font-medium">Process</a>
+            <a href="#what-we-do" className="text-text-muted hover:text-white transition-colors text-sm font-medium">What we do</a>
             <a href="#pricing" className="text-text-muted hover:text-white transition-colors text-sm font-medium">Tiers</a>
             <a href="#contact" className="text-text-muted hover:text-white transition-colors text-sm font-medium">Initiate</a>
           </nav>
         </div>
 
         <div className="flex items-center gap-4">
-          <div className="hidden lg:flex items-center bg-surface-card border border-border-subtle rounded-lg px-3 py-1.5 gap-2 w-48 group focus-within:border-white/50 transition-colors">
-            <Search className="w-3.5 h-3.5 text-text-muted" />
-            <input 
-              type="text" 
-              placeholder="Quick search..." 
-              className="bg-transparent border-none focus:ring-0 text-xs flex-1 outline-none placeholder:text-text-muted"
-            />
-          </div>
-          
           <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="hidden md:block py-2 text-sm">
-            Contact
+            Work with us
           </Button>
 
           <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 text-white">
@@ -87,7 +78,7 @@ const Header = () => {
             className="md:hidden bg-surface-card border-b border-border-subtle overflow-hidden"
           >
             <div className="flex flex-col p-6 gap-4">
-              <a href="#process" onClick={() => setIsOpen(false)} className="text-text-muted hover:text-white py-2 border-b border-border-subtle/50">Process</a>
+              <a href="#what-we-do" onClick={() => setIsOpen(false)} className="text-text-muted hover:text-white py-2 border-b border-border-subtle/50">What we do</a>
               <a href="#pricing" onClick={() => setIsOpen(false)} className="text-text-muted hover:text-white py-2 border-b border-border-subtle/50">Tiers</a>
               <a href="#contact" onClick={() => setIsOpen(false)} className="text-text-muted hover:text-white py-2">Initiate</a>
             </div>
@@ -116,8 +107,8 @@ const Hero = () => (
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-5xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.9]"
       >
-        WE BUILD THE<br />
-        FUTURE ENGINES.
+        FUNDRAISING<br />
+        RE-ENGINEERED.
       </motion.h1>
 
       <motion.p 
@@ -126,7 +117,7 @@ const Hero = () => (
         transition={{ delay: 0.3, duration: 0.8 }}
         className="text-lg text-text-description max-w-xl mb-12 leading-relaxed"
       >
-        Elite software engineering for high-growth startups and visionary tech leaders. Precision code, distributed systems, and rapid MVPs.
+        We clear the technical and narrative debt holding back your seed or Series A. Elite pitch design, stress-tests, and narrative positioning.
       </motion.p>
 
       <motion.div 
@@ -136,78 +127,12 @@ const Hero = () => (
         className="flex flex-col sm:flex-row gap-4"
       >
         <Button onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} className="px-10 py-4 text-lg">Start Project</Button>
-        <Button onClick={() => document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })} variant="secondary" className="px-10 py-4 text-lg">Our Process</Button>
+        <Button onClick={() => document.getElementById('what-we-do')?.scrollIntoView({ behavior: 'smooth' })} variant="secondary" className="px-10 py-4 text-lg">Our Process</Button>
       </motion.div>
     </div>
 
     {/* Background Glow */}
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] pointer-events-none -z-10 bg-[radial-gradient(circle_at_50%_-20%,rgba(255,255,255,0.1)_0%,transparent_70%)] opacity-50" />
-  </section>
-);
-
-const BentoGrid = () => (
-  <section className="py-24">
-    <div className="max-w-container grid grid-cols-1 md:grid-cols-12 gap-6">
-      {/* Pitch Decks Card */}
-      <motion.div 
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        className="md:col-span-7 bg-surface-card border border-border-subtle rounded-2xl p-8 flex flex-col justify-between group hover:border-zinc-700 transition-colors h-[420px]"
-      >
-        <div>
-          <div className="flex items-center gap-3 mb-6">
-            <div className="p-2 border border-border-subtle rounded-lg">
-              <BarChart3 className="w-5 h-5 text-white" />
-            </div>
-            <h3 className="text-xl font-bold">Systems Architecture</h3>
-          </div>
-          <p className="text-text-description leading-relaxed max-w-sm text-lg">
-            Scalable blueprints for distributed networks. We design with the "why" before the "how".
-          </p>
-        </div>
-        <div className="relative mt-8 h-40 rounded-xl overflow-hidden border border-border-subtle bg-background">
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
-          <img 
-            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=800" 
-            alt="Servers" 
-            className="w-full h-full object-cover grayscale opacity-20 group-hover:opacity-40 transition-opacity duration-700"
-          />
-        </div>
-      </motion.div>
-
-      {/* Fundraising Card - repurposed for Tech stack */}
-      <motion.div 
-        initial={{ opacity: 0, x: 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        className="md:col-span-5 bg-surface-card border border-border-subtle rounded-2xl p-8 flex flex-col justify-between hover:border-zinc-700 transition-colors h-[420px]"
-      >
-        <div>
-          <div className="flex items-center gap-3 mb-8">
-            <div className="p-2 border border-border-subtle rounded-lg">
-              <Code2 className="w-5 h-5 text-white" />
-            </div>
-            <h3 className="text-xl font-bold">Tech Stack</h3>
-          </div>
-          <div className="space-y-6">
-            {[
-              { label: 'Runtime Stability', val: '99.99%' },
-              { label: 'Latency Target', val: '< 50ms' },
-              { label: 'Language Core', val: 'Rust / Go / TS' }
-            ].map(stat => (
-              <div key={stat.label} className="flex justify-between items-center border-b border-border-subtle pb-4">
-                <span className="text-text-muted text-sm font-bold uppercase tracking-widest">{stat.label}</span>
-                <span className="font-mono text-white font-bold">{stat.val}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-        <p className="text-text-muted text-sm italic">
-          * Optimized for high-throughput environments.
-        </p>
-      </motion.div>
-    </div>
   </section>
 );
 
@@ -279,7 +204,6 @@ export default function Marketplace() {
       <Hero />
       <div className="space-y-4 px-4 overflow-hidden">
         <Process />
-        <BentoGrid />
         <Pricing onSelectTier={handleSelectTier} />
         <StartProject selectedTier={selectedTier} />
       </div>
